@@ -1,0 +1,12 @@
+h1 {
+    font-family: sanchez;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: seashell;
+    text-shadow: 5px 2px black; 
+    padding: auto;
+    font-size: xxx-large;
+    font-weight:bold;
+    padding-top: 2rem;
+}
