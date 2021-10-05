@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
-// import { Navbar, Nav, Container, Modal, Tab, Button, Row } from 'react-bootstrap';
 import '../../index.css';
 import './Banner.css';
 
