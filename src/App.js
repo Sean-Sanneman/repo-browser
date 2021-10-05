@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 import './index.css';
 
@@ -9,7 +10,9 @@ import Banner from './components/Banner/Banner';
 function App() {
   return (
     <div>
-      <Banner />
+      <Row>
+        <Banner />
+      </Row>
     </div>
   );
 }
