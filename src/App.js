@@ -7,7 +7,7 @@ import './App.css';
 import './index.css';
 
 // components
-import Banner from './components/Banner/Banner';
+import Browser from './components/Browser/Browser';
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -25,13 +25,13 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      
+    
     <div>
       <Row>
-        <Banner />
+        <Browser />
       </Row>
     </div>
-    
+
     </ApolloProvider>
   );
 }
