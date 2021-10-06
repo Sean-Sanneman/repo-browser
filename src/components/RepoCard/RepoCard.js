@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import './RepoCard.css'
 
 const RepoCard = () => {
+
+  useEffect(() => {
+    const url = 'https://api.github.com/orgs/Netflix/repos'
+
+    const fetchData = async () => {
+      try{
+        const response = await fetch(url);
+        const json = await response.json();
+        console.log(json);
+      } catch (error) {
+        console.log('error', error);
+    }
+  };
+
+  fetchData();  
+  }, []);
 
     return (
         <>

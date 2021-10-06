@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col, Button, Table } from 'react-bootstrap';
 import '../../index.css';
 import '../../App.css';
 import './Browser.css';
 
-import '../RepoCard/RepoCard';
 import RepoCard from '../RepoCard/RepoCard';
+
 
 const Browser = () => {
 
@@ -31,7 +31,6 @@ const Browser = () => {
         <br />
 
         <RepoCard />
-
 
             
             </Container>
