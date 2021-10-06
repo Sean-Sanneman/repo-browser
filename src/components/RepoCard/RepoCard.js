@@ -1,8 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import './RepoCard.css'
 
 const RepoCard = () => {
+
+  const [name,setName] = useState('');
+    const [loading,setLoading] = useState(true);
+    const [language,setLanguage]= useState('');
+    const [description,setDescription] = useState('');
+    const [starCount,setStarCount] = useState('');
+    const [forksCount,setForksCount]= useState('');
+    const [date, setDate] = useState('');
 
   useEffect(() => {
     const url = 'https://api.github.com/orgs/Netflix/repos'
@@ -12,8 +20,18 @@ const RepoCard = () => {
         const response = await fetch(url);
         const json = await response.json();
         console.log(json);
+
+        setName(json[0].name);
+        setLanguage(json[0].language);
+        setDescription(json[0].description);
+        setStarCount(json[0].stargazers_count);
+        setForksCount(json[0].forks_count);
+        setDate(json[0].created_at);
+
       } catch (error) {
         console.log('error', error);
+
+        
     }
   };
 
@@ -23,20 +41,18 @@ const RepoCard = () => {
     return (
         <>
           <Card border="none" style={{ width: '100%' }}>
-    <Card.Header>Repo Name</Card.Header>
+    <Card.Header>{name}</Card.Header>
     <Card.Body>
-      <Card.Text>Language: </Card.Text>
-      <Card.Text>
-      Get my claw stuck in the dog's ear mrow, nyan nyan goes the cat, scraaaaape scraaaape goes the walls when the cat murders them with its claws x, white cat sleeps on a black shirt. Bite plants kitty time swipe at owner's legs jump five feet high and sideways when a shadow moves meowwww. 
-      </Card.Text>
+      <Card.Text>Language: {language}</Card.Text>
+      <Card.Text>{description}</Card.Text>
       <Col>
-      <Card.Text>Stars: </Card.Text>
+      <Card.Text>Stars: {starCount} </Card.Text>
       </Col>
       <Col>
-      <Card.Text>Forked: </Card.Text>
+      <Card.Text>Forked: {forksCount} </Card.Text>
       </Col>
       <Col>
-      <Card.Text>Date Created: </Card.Text>
+      <Card.Text>Date Created: {date} </Card.Text>
       </Col>
     </Card.Body>
   </Card>
