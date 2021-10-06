@@ -4,9 +4,13 @@ import '../../index.css';
 import '../../App.css';
 import './Browser.css';
 
+import '../RepoCard/RepoCard';
+import RepoCard from '../RepoCard/RepoCard';
+
 const Browser = () => {
 
     return (
+        <>
         <Row>
             <Col xs={12}>
         <Container className="broGlass">
@@ -23,37 +27,18 @@ const Browser = () => {
             <Button variant="outline-light searchBtn glow-on-hover">Press Me</Button>{' '}
             </Col>
         </Row>
+        <br />
+        <br />
 
-<Row style={{ paddingTop: '36px', borderRadius:'12px', }}>
-  <Table striped hover>
-  <thead>
-    <tr>
-      <th>Repo Name</th>
-      <th>Language</th>
-      <th>Description</th>
-      <th>Star Count</th>
-      <th>Fork Count</th>
-      <th>Date Created</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Plasma</td>
-      <td>GoLang</td>
-      <td>Very Neat</td>
-      <td>100</td>
-      <td>5</td>
-      <td>Jan, 1st</td>
-    </tr>
-  </tbody>
-</Table>
-        </Row>
+        <RepoCard />
+
+
             
             </Container>
             </Col>
             </Row>
             
-        
+        </>
     )
 
 };
