@@ -4,7 +4,7 @@ import './RepoCard.css'
 
 const RepoCard = () => {
 
-  const [name,setName] = useState('');
+    const [name,setName] = useState('');
     const [loading,setLoading] = useState(true);
     const [language,setLanguage]= useState('');
     const [description,setDescription] = useState('');
@@ -16,17 +16,20 @@ const RepoCard = () => {
     const url = 'https://api.github.com/orgs/Netflix/repos'
 
     const fetchData = async () => {
+    
       try{
         const response = await fetch(url);
         const json = await response.json();
         console.log(json);
 
-        setName(json[0].name);
-        setLanguage(json[0].language);
-        setDescription(json[0].description);
-        setStarCount(json[0].stargazers_count);
-        setForksCount(json[0].forks_count);
-        setDate(json[0].created_at);
+        for(let i = 0; i < json.length; i++) {
+        setName(json[i].name);
+        setLanguage(json[i].language);
+        setDescription(json[i].description);
+        setStarCount(json[i].stargazers_count);
+        setForksCount(json[i].forks_count);
+        setDate(json[i].created_at);
+        }
 
       } catch (error) {
         console.log('error', error);
@@ -56,7 +59,7 @@ const RepoCard = () => {
       </Col>
     </Card.Body>
   </Card>
-        </>
+      </>  
     )
 };
 
