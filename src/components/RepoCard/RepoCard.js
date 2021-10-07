@@ -1,14 +1,12 @@
-import { render } from '@testing-library/react';
-import React, { useEffect, useState } from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import './RepoCard.css'
 
 const RepoCard = ({ repoInfo }) => {
-  const { name, language, description, starCount, ForksCount, date } = repoInfo;
+  const { name, language, description, starCount, forksCount, date } = repoInfo;
 
     return (
         <>
-          <Card border="none" style={{ width: '100%' }}>
+          <Card border="none" style={{ width: '90%' }}>
     <Card.Header>{name}</Card.Header>
     <Card.Body>
       <Card.Text>Language: {language}</Card.Text>

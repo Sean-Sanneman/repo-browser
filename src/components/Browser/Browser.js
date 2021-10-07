@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Container, Row, Col, Button, Table } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import '../../index.css';
 import '../../App.css';
 import './Browser.css';
