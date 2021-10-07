@@ -5,7 +5,6 @@ import './RepoCard.css'
 const RepoCard = () => {
 
     const [name,setName] = useState('');
-    const [loading,setLoading] = useState(true);
     const [language,setLanguage]= useState('');
     const [description,setDescription] = useState('');
     const [starCount,setStarCount] = useState('');
@@ -19,18 +18,18 @@ const RepoCard = () => {
     
       try{
         const response = await fetch(url);
-        const json = await response.json();
-        console.log(json);
+        const data = await response.json();
+        console.log(data);
 
-        for(let i = 0; i < json.length; i++) {
-        setName(json[i].name);
-        setLanguage(json[i].language);
-        setDescription(json[i].description);
-        setStarCount(json[i].stargazers_count);
-        setForksCount(json[i].forks_count);
-        setDate(json[i].created_at);
+        for(let i = 0; i < data.length; i++) {
+        setName(data[i].name);
+        setLanguage(data[i].language);
+        setDescription(data[i].description);
+        setStarCount(data[i].stargazers_count);
+        setForksCount(data[i].forks_count);
+        setDate(data[i].created_at);
         }
-
+      
       } catch (error) {
         console.log('error', error);
 
@@ -40,6 +39,7 @@ const RepoCard = () => {
 
   fetchData();  
   }, []);
+
 
     return (
         <>
@@ -61,6 +61,7 @@ const RepoCard = () => {
   </Card>
       </>  
     )
+
 };
 
 export default RepoCard;
