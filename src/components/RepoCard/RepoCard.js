@@ -6,7 +6,7 @@ const RepoCard = ({ repoInfo }) => {
 
     return (
         <>
-          <Card border="none" style={{ width: '90%' }}>
+          <Card border="none" style={{ width: '90%', margin: '2%' }}>
     <Card.Header>{name}</Card.Header>
     <Card.Body>
       <Card.Text>Language: {language}</Card.Text>

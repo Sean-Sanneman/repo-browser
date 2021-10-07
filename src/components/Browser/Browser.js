@@ -60,10 +60,11 @@ const Browser = () => {
         <br />
         <br />
 
-
+        <Container className='cardBox'>
         {searchedRepos.map((repo) => (
 							<RepoCard key={repo.id} repoInfo={repo} />
 						))}
+        </Container>
             
             </Container>
             </Col>

@@ -6,13 +6,20 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 
-
     margin: 3% auto;
     padding: 4px auto;
     align-content: center;
     justify-content: center;
-    
 }
+
+.cardBox {
+  height: 32em;
+  overflow-y: scroll;
+  margin-bottom: 2%;
+
+}
+
+
 
 h2 {
     
@@ -31,6 +38,7 @@ h2 {
     border-bottom-style: groove;
     border-color: black;
 }
+
 
 /* glow on hover for button */
 
