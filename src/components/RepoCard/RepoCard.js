@@ -33,7 +33,7 @@ const RepoCard = ({ repoInfo }) => {
         className="togBut"
         variant="outline-dark"
         onClick={() => setOpen(!open)}
-        aria-controls="example-fade-text"
+        aria-controls="fade-text"
         aria-expanded={open}
         style={{marginTop:'2%', border: 'none', textDecoration: 'none'}}
       >
