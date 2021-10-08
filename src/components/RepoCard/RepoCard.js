@@ -1,8 +1,11 @@
-import { Card, Col, Button } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import './RepoCard.css'
+
+import Commits from '../Commits/Commits';
 
 const RepoCard = ({ repoInfo }) => {
   const { name, language, description, starCount, forksCount, date } = repoInfo;
+
 
     return (
         <>
@@ -19,6 +22,12 @@ const RepoCard = ({ repoInfo }) => {
       </Col>
       <Col>
       <Card.Text>Date Created: {date} </Card.Text>
+      </Col>
+      
+      <Col>
+      <Card.Text>
+        <Commits />
+      </Card.Text>
       </Col>
     </Card.Body>
   </Card>

@@ -24,7 +24,8 @@ const Browser = () => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(url);
-				const data = await response.json();
+                const data = await response.json();
+                console.log(data)
 				const repoData = data.map((repo) => ({
 					id: repo.id,
 					name: repo.name,
@@ -32,7 +33,8 @@ const Browser = () => {
 					description: repo.description,
 					starCount: repo.stargazers_count,
 					forksCount: repo.forks_count,
-					date: repo.created_at,
+                    date: repo.created_at,
+                    commitList: repo.commits_url,
                 }));
 
                 repoData.sort(function(a,b){
