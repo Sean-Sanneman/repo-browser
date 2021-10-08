@@ -15,3 +15,9 @@ transform: scale(.995);
     box-shadow: none;
 
 }
+
+.comBox {
+    margin-top: 0;
+    height: 3.5em;
+    overflow-y: scroll;
+}

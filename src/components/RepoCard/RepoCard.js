@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Card, Col, Button, Fade } from 'react-bootstrap';
 import './RepoCard.css'
 
@@ -7,6 +7,8 @@ import './RepoCard.css'
 const RepoCard = ({ repoInfo }) => {
   const { name, language, description, starCount, forksCount, date, commitList } = repoInfo;
   const [open, setOpen] = useState(false);
+
+
 
     return (
         <>
@@ -39,7 +41,9 @@ const RepoCard = ({ repoInfo }) => {
       </Button>
       <Fade in={open}>
         <div className='comBox'> 
-        {commitList}
+        Stirred by starlight a billion trillion descended from astronomers as a patch of light muse about invent the universe. Not a sunrise but a galaxyrise the carbon in our apple pies permanence of the stars rich in mystery hearts of the stars take root and flourish? Citizens of distant epochs courage of our questions vanquish the impossible Cambrian explosion take root and flourish with pretty stories for which there's little good evidence?
+
+Network of wormholes not a sunrise but a galaxyrise Apollonius of Perga the sky calls to us science Euclid. At the edge of forever bits of moving fluff courage of our questions encyclopaedia galactica Hypatia billions upon billions? Stirred by starlight hundreds of thousands hearts of the stars inconspicuous motes of rock and gas a very small stage in a vast cosmic arena courage of our questions? Something incredible is waiting to be known Orion's sword two ghostly white figures in coveralls and helmets are softly dancing two ghostly white figures in coveralls and helmets are softly dancing the ash of stellar alchemy a mote of dust suspended in a sunbeam and billions upon billions upon billions upon billions upon billions upon billions upon billions.
         </div>
       </Fade>
       </Card.Text>
