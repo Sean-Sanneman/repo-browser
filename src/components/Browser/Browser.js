@@ -8,10 +8,17 @@ import RepoCard from '../RepoCard/RepoCard';
 
 
 const Browser = () => {
+
+    
+   
     // state for holding api data
     const [searchedRepos, setSearchedRepos] = useState([]);
 
+    
+    
+
     useEffect(() => {
+
 		const url = 'https://api.github.com/orgs/Netflix/repos';
 
 		const fetchData = async () => {
@@ -26,18 +33,24 @@ const Browser = () => {
 					starCount: repo.stargazers_count,
 					forksCount: repo.forks_count,
 					date: repo.created_at,
-				}));
+                }));
 
-				setSearchedRepos(repoData);
+                repoData.sort(function(a,b){
+                    return b.starCount - a.starCount
+                });
+
+                setSearchedRepos(repoData);
 				console.log('searchedRepos', searchedRepos);
 			} catch (error) {
 				console.log('error', error);
 			}
 		};
+       
+        fetchData();
 
-		fetchData();
 	}, []);
 
+    
 
     return (
         <>
@@ -54,7 +67,7 @@ const Browser = () => {
                 <h3 className="justify-content-left text">Organization: Netflix</h3>
             </Col>
             <Col xs={2}>
-            <Button variant="outline-light searchBtn glow-on-hover">Press Me</Button>{' '}
+            <Button  variant="outline-light searchBtn glow-on-hover">Press Me</Button>{' '}
             </Col>
         </Row>
         <br />
@@ -72,7 +85,6 @@ const Browser = () => {
             
         </>
     );
-
 };
 
 export default Browser;
