@@ -76,9 +76,6 @@ h2 {
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
   }
-  .glow-on-hover:active {
-    
-  }
   .glow-on-hover:active:after {
     background: transparent;
   }

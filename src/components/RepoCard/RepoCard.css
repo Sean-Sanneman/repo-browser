@@ -9,3 +9,9 @@
 .card:hover {
 transform: scale(.995);
 }
+ 
+.togBut:focus {
+    outline: none;
+    box-shadow: none;
+
+}
