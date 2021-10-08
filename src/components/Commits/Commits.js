@@ -13,6 +13,7 @@ const Commits = () => {
 
 <div>        
 <Button
+        className="togBut"
         variant="outline-dark"
         onClick={() => setOpen(!open)}
         aria-controls="example-fade-text"

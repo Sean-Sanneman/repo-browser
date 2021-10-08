@@ -3,3 +3,9 @@
     height: 3.5em;
     overflow-y: scroll;
 }
+
+.togBut:focus {
+    outline: 0px;
+    outline: none;
+    box-shadow: none;
+}
