@@ -1,11 +1,12 @@
-import { Card, Col } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Card, Col, Button, Fade } from 'react-bootstrap';
 import './RepoCard.css'
 
-import Commits from '../Commits/Commits';
+
 
 const RepoCard = ({ repoInfo }) => {
-  const { name, language, description, starCount, forksCount, date } = repoInfo;
-
+  const { name, language, description, starCount, forksCount, date, commitList } = repoInfo;
+  const [open, setOpen] = useState(false);
 
     return (
         <>
@@ -26,7 +27,21 @@ const RepoCard = ({ repoInfo }) => {
       
       <Col>
       <Card.Text>
-        <Commits />
+      <Button
+        className="togBut"
+        variant="outline-dark"
+        onClick={() => setOpen(!open)}
+        aria-controls="example-fade-text"
+        aria-expanded={open}
+        style={{marginTop:'2%', border: 'none', textDecoration: 'none'}}
+      >
+        Recent Commits
+      </Button>
+      <Fade in={open}>
+        <div className='comBox'> 
+        {commitList}
+        </div>
+      </Fade>
       </Card.Text>
       </Col>
     </Card.Body>

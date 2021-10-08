@@ -7,6 +7,7 @@ import './Browser.css';
 import RepoCard from '../RepoCard/RepoCard';
 
 
+
 const Browser = () => {
 
     
@@ -52,7 +53,7 @@ const Browser = () => {
 
 	}, []);
 
-    
+
 
     return (
         <>
